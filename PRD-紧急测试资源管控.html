@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRD-紧急测试资源管控</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #333;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+            margin-top: 24px;
+            margin-bottom: 16px;
+        }
+        h1 { font-size: 28px; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { font-size: 24px; border-bottom: 1px solid #ecf0f1; padding-bottom: 8px; }
+        h3 { font-size: 20px; }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: 600;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin: 8px 0;
+        }
+        strong {
+            color: #e74c3c;
+        }
+        p {
+            margin: 10px 0;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h1>PRD-紧急测试资源管控1</h1><h3><a id="qp5qC"></a>需求背景</h3><p><a id="u14edb417"></a>在电池研发和生产过程中，各部门需要进行多种类型的电芯测试。为确保紧急情况下测试资源的合理分配，需要建立一套可配置的规则系统，允许管理员按部门和测试类型分配电芯测试数量配额。</p><h3><a id="pRP9F"></a>需求描述</h3><p><a id="u7c99c725"></a>1、支持按照部门维度，配置紧急资源，紧急资源需按照循环测试、短期测试、存储测试三种测试类别进行测试任务数量管控。</p><p><a id="u46449596"></a>测试类别：即测试类别对应的电芯_电性能业务域下，对应的一级测试类别。</p><h5><a id="u13ce64ce"></a>1、1字段说明</h5><table><tr><td><p><a id="u80d27cb8"></a><a id="E2eTU"></a>字段名称</p></td><td><p><a id="ufb7774d6"></a>所属表</p></td><td><p><a id="u9dd83f3b"></a>输入类型</p></td><td><p><a id="uf76a2590"></a>说明</p></td></tr><tr><td><p><a id="u13d3f4c6"></a>部门名称</p></td><td><p><a id="u66984dd5"></a>紧急资源管控表</p></td><td><p><a id="ua8d03823"></a>用户选择</p></td><td><p><a id="ue4a276d6"></a>数据源：HR系统部门组织。选择一级部门，配置当前一级部门的紧急资源管控数量</p></td></tr><tr><td><p><a id="ue1867342"></a>循环测试</p></td><td><p><a id="uacefdd70"></a>紧急资源管控表</p></td><td><p><a id="u837631c5"></a>默认带出</p></td><td><p><a id="u2a304c5b"></a>配置循环测试紧急资源管控数量</p></td></tr><tr><td><p><a id="u34e8d47d"></a>存储测试</p></td><td><p><a id="u920c8291"></a>紧急资源管控表</p></td><td><p><a id="u751aa542"></a>默认带出</p></td><td><p><a id="ucd89c13b"></a>配置存储测试紧急资源管控数量</p></td></tr><tr><td><p><a id="ub88766fc"></a>短期测试</p></td><td><p><a id="u478dc438"></a>紧急资源管控表</p></td><td><p><a id="ub6b2c410"></a>默认带出</p></td><td><p><a id="ue7ac09a9"></a>配置短期测试紧急资源管控数量</p></td></tr><tr><td><p><a id="ud7f45290"></a>小计</p></td><td><p><a id="ueb87fce3"></a>紧急资源管控表</p></td><td><p><a id="ue130b807"></a>默认带出</p></td><td><p><a id="uef0c330c"></a>等于当前部门的 循环测试数量 + 存储测试数量 + 短期测试数量</p></td></tr></table><h5><a id="ue3e1376f"></a><a id="u6d8fba63"></a>1、2支持数据统计：**</h5><p><a id="u3481e1f4"></a>样例数据：</p><table><tr><td><p><a id="u2bdd381b"></a><a id="bfI5w"></a>部门</p></td><td><p><a id="u4035c689"></a>循环测试(测试数量)</p></td><td><p><a id="ud0ba31af"></a>存储测试(测试数量)</p></td><td><p><a id="u49a2527b"></a>短期测试(测试舒朗)</p></td><td><p><a id="ue8492b13"></a>小计(测试数量)</p></td></tr><tr><td><p><a id="u0658d7f7"></a>研究院</p></td><td><p><a id="u918db9a0"></a>80</p></td><td><p><a id="uab19324a"></a>50</p></td><td><p><a id="u184cd8dc"></a>40</p></td><td><p><a id="u4a8231c4"></a>170</p></td></tr><tr><td><p><a id="u46fdaa17"></a>平台中心</p></td><td><p><a id="uf4ccc415"></a>100</p></td><td><p><a id="uc241e611"></a>60</p></td><td><p><a id="ud79cf8cf"></a>50</p></td><td><p><a id="u4e1e1f6b"></a>210</p></td></tr><tr><td><p><a id="ude3b5811"></a>产品中心</p></td><td><p><a id="ud0c4ab17"></a>120</p></td><td><p><a id="u8cd2f3c3"></a>80</p></td><td><p><a id="u5641289d"></a>60</p></td><td><p><a id="ue6b204dc"></a>260</p></td></tr><tr><td><p><a id="uec148276"></a>研发战略中心</p></td><td><p><a id="ubca2901c"></a>90</p></td><td><p><a id="u910d54d9"></a>70</p></td><td><p><a id="u32d3cb95"></a>45</p></td><td><p><a id="u14762254"></a>205</p></td></tr><tr><td><p><a id="uf15484b8"></a>品质保证部</p></td><td><p><a id="uf8b37ab2"></a>110</p></td><td><p><a id="u352626f2"></a>65</p></td><td><p><a id="u40a78ce7"></a>55</p></td><td><p><a id="ud2cf6fa8"></a>230</p></td></tr><tr><td><p><a id="u59021404"></a>项目工程部</p></td><td><p><a id="u30c2b2e8"></a>70</p></td><td><p><a id="u26e2df28"></a>40</p></td><td><p><a id="u2f54a8fb"></a>35</p></td><td><p><a id="u8f4c5226"></a>145</p></td></tr><tr><td><p><a id="uebf75b33"></a>工艺研究院</p></td><td><p><a id="udec14bf7"></a>60</p></td><td><p><a id="u9b9d7a24"></a>35</p></td><td><p><a id="uc65d3fb6"></a>30</p></td><td><p><a id="u1ef453cc"></a>125</p></td></tr><tr><td><p><a id="u5d41f7dc"></a><strong>合计</strong></p></td><td><p><a id="uc9227bd4"></a><strong>630</strong></p></td><td><p><a id="uad59d5b0"></a><strong>400</strong></p></td><td><p><a id="uddd7559a"></a><strong>315</strong></p></td><td><p><a id="ua8a62b64"></a><strong>1345</strong></p></td></tr></table><p><a id="uff48cc54"></a>部门小计 = 循环测试数量 + 存储测试数量 + 短期测试数量 循环测试总数 = Σ(所有部门的循环测试数量) 存储测试总数 = Σ(所有部门的存储测试数量) 短期测试总数 = Σ(所有部门的短期测试数量) 电芯总数 = 循环测试总数 + 存储测试总数 + 短期测试总数</p><p><a id="ufc43ee64"></a>校验逻辑：数据≥0</p><h5><a id="u5bc4edff"></a>1、3支持添加部门数据配置。**</h5><p><a id="uf9be84e7"></a>用户点击&quot;添加部门&quot;按钮，弹窗配置部门数据，包括：从下拉列表中选择部门名称，输入三种类型测试的电芯数量。</p><p><a id="u1176a221"></a>可选部门：数据源来自HR部门组织_一级部门</p><p><a id="u38ce9c1f"></a>校验逻辑：同一个部门只能存在一条配置数据</p><h5><a id="u10ad0fe5"></a>2、校验逻辑(委托申请)：</h5><p><a id="u7e4b7c45"></a>2、1委托方填单时。按照责任工程师所在的一级部门进行管控，即当前一级部门下，当前月份提测的紧急程度为【紧急】的申请单中，【循环测试】，【存储测试】，【短期测试】，不可超过配置的，各【测试类别】对应的测试任务数量限制。提单时，需要校验，如果超出配置数量，提示：当月紧急测试资源已达上线，请调整紧急程度为正常后重新提交。</p><p><a id="ue593c5a2"></a>2、2对责任工程师所在的一级部门，如果没有配置紧急测试资源的。无法提紧急单。并提示：当前部门未分配紧急测试资源，请调整紧急程度为正常后重新提交。</p><h5><a id="u22131db7"></a>3、配置提示</h5><p><a id="ubb787472"></a>提示内容：紧急资源数量即紧急电芯测试任务数量，如委托单样品数量合计2个，需分别做容量测试、HPPC两个测试项目。即记作2*2 = 4次紧急电芯测试。</p><h2><a id="SltlH"></a><a id="oS7ye"></a>基础配置</h2><p><a id="uf02930e0"></a>在基础设置页面中，创建费率设置页面，费率设置页面，支持按照紧急程度设置费率。</p><p><a id="uc9958e88"></a>紧急程度有：正常和紧急两种。</p><table><tr><td><p><a id="u830fb27d"></a><a id="Qwsd9"></a>No.</p></td><td><p><a id="u29d67a15"></a>紧急程度</p></td><td><p><a id="u3c9c21a8"></a>费率设置</p></td></tr><tr><td><p><a id="ue3fe77fa"></a>1</p></td><td><p><a id="u8fee0e76"></a>正常</p></td><td><p><a id="u423f105f"></a>1.0</p></td></tr><tr><td><p><a id="ufd6d65f7"></a>2</p></td><td><p><a id="u30d0226f"></a>紧急</p></td><td><p><a id="ud1178e66"></a>1.2</p></td></tr></table><p><a id="IuRio"></a></p>
+</body>
+</html>
